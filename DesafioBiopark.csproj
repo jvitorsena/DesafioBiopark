@@ -7,8 +7,33 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Dapper" Version="2.0.123" />
+        <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0-preview.1.23111.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="MySql.Data" Version="8.0.32" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="ClientApp\MOdel.cs" />
+      <Compile Remove="Config\Queries\Locatarios\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Config\Queries\Locatarios\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Config\Queries\Locatarios\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Config\Queries\Locatarios\**" />
     </ItemGroup>
 
 </Project>
