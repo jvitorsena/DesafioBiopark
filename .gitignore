@@ -28,6 +28,8 @@ ClientApp/*.njsproj
 ClientApp/*.sln
 ClientApp/*.sw?
 
+Migrations/
+
 # User-specific files
 *.rsuser
 *.suo
