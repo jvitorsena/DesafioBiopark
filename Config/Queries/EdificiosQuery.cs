@@ -25,7 +25,7 @@ public class EdificiosQuery
         string nome = string.IsNullOrEmpty(model.nome) ? "" : $"nome='{model.nome}'";
         string locadora = string.IsNullOrEmpty(model.locadora) ? "" : $"locadora='{model.locadora}'";
         string updatedAt = $"updatedAt='{DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss")}'";
-        // string isActive = $"isActive={model.isActive}";
+        string isActive = $"isActive={model.isActive}";
         return $@"UPDATE Biopark.Edificios
                     SET {nome}, {locadora}, {updatedAt}
                     WHERE id={id};";
