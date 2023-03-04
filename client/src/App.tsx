@@ -11,7 +11,7 @@ const darkTheme = createTheme({
 });
 
 export default function App() {
-  const [route, setRoute] = useState<string>("initialPath");
+  const [route, setRoute] = useState<string>("edificios");
 
   return (
     <ThemeProvider theme={darkTheme}>

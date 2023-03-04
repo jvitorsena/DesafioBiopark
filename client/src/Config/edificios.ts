@@ -13,4 +13,12 @@ export const TodosEdificios = fetch(`${API_URL}/edificios/todos`).then(
   (response) => response.json()
 );
 
-export const teste = API_URL;
+export const EdificiosCabecalho: Array<string> = [
+  "id",
+  "Nome",
+  "Locadora",
+  "Data criação",
+  "Data atualização",
+  "Situação",
+  "Ação",
+];
