@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Asidebar from "./Components/Asidebar";
 import Head from "./Components/Head";
 import EdificiosContent from "./Components/Edificios/EdificiosContent";
+import LocatariosConent from "./Components/Locatarios/LocatariosContent";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,15 +23,9 @@ export default function App() {
             <main className="flex-1 md:mx-4 my-4 lg:mx-8 lg:my-0">
               <div className="pb-10">
                 <div className="bg-default px-4 pb-10 sm:px-10 sm:pt-8 sm:pb-12 lg:px-4">
-                  <Head />
-                  <EdificiosContent />
-                  {/* {route == "initialPath" ? <Content /> : null}
-                  {route == "Nubank" ? (
-                    <TransactionContent name="Nubank" />
-                  ) : null}
-                  {route == "Nuconta" ? (
-                    <TransactionContent name="Nuconta" />
-                  ) : null} */}
+                  <Head titulo={route} />
+                  {route == 'edificios' ? <EdificiosContent /> : null}
+                  {route == 'locatarios' ? <LocatariosConent /> : null}
                 </div>
               </div>
             </main>

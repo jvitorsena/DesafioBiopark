@@ -8,8 +8,7 @@ public class LocatariosMigration
 {
     [Key, ForeignKey("locatariosId")]
     public int id { get; set; }
-    public string primeiroNome { get; set; }
-    public string segundoNome { get; set; }
+    public string nome { get; set; }
     public DateTime dataNasc { get; set; }
     public DateTime createdAt { get; set; }
     public DateTime updatedAt { get; set; }

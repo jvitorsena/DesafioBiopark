@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { TodosLocatarios, ITodosLocatarios } from "../../Config/locatarios";
 import { ITodosEdificios, TodosEdificios } from "../../Config/edificios";
 import {
     InputLabel,
@@ -12,23 +13,23 @@ import {
     Button,
 } from "@mui/material";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import EdificiosTable from "./EdificiosTable";
-import EdificiosNovoModal from "./EdificiosNovoModal";
+import LocatariosTable from "./LocatariosTable";
+import LocatarioNovoModal from "./LocatarioNovoModal";
 
-export default function EdificiosContent() {
+export default function LocatariosConent() {
     const [selectDocuments, setSelectDocuments] = useState("0");
-    const [todosEdificios, setTodosEdificios] = useState<Array<ITodosEdificios>>(
+    const [todosLocatarios, setTodosLocatarios] = useState<Array<ITodosLocatarios>>(
         []
     );
 
     useEffect(() => {
-        TodosEdificios.then((json) => setTodosEdificios(json)).catch((error) =>
+        TodosLocatarios.then((json) => setTodosLocatarios(json)).catch((error) =>
             console.log(error)
         );
     }, []);
 
     function teste() {
-        TodosEdificios.then((json) => setTodosEdificios(json)).catch((error) =>
+        TodosLocatarios.then((json) => setTodosLocatarios(json)).catch((error) =>
             console.log(error)
         );
     }
@@ -45,7 +46,7 @@ export default function EdificiosContent() {
                         <div className="grid gap-3 grid-cols-4 sm:flex flex-wrap justify-between items-center">
                             <div className="col-span-4 flex justify-between">
                                 <div className="flex items-center space-x-3">
-                                    < EdificiosNovoModal />
+                                    < LocatarioNovoModal />
                                     {/* <div className="font-semibold text-xl dark:text-white">
                     Pagina inicial
                   </div>
@@ -79,10 +80,10 @@ export default function EdificiosContent() {
                             <div className="rounded-xl mt-7 focus:outline-none">
                                 <div className="flex flex-col -mx-4 sm:mx-0">
                                     <div className="overflow-visible dark:border-slate-700 rounded-xl">
-                                        <EdificiosTable
-                                            values={todosEdificios}
-                                            quantityValues={todosEdificios.length}
-                                            setTodosEdificios={setTodosEdificios}
+                                        <LocatariosTable
+                                            values={todosLocatarios}
+                                            quantityValues={todosLocatarios.length}
+                                            setTodosEdificios={setTodosLocatarios}
                                         />
                                         <h1>Hello World</h1>
                                     </div>

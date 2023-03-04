@@ -61,88 +61,88 @@ namespace DesafioBiopark.Migrations
                             id = 1,
                             alugado = true,
                             andar = 1,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(8027),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(875),
                             edificiosId = 1,
                             isActive = true,
                             numero = 101,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(8391)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1208)
                         },
                         new
                         {
                             id = 2,
                             alugado = true,
                             andar = 1,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9072),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1765),
                             edificiosId = 1,
                             isActive = true,
                             numero = 102,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9079)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1772)
                         },
                         new
                         {
                             id = 3,
                             alugado = true,
                             andar = 2,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9083),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1775),
                             edificiosId = 1,
                             isActive = true,
                             numero = 201,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9085)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1776)
                         },
                         new
                         {
                             id = 4,
                             alugado = true,
                             andar = 2,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9088),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1779),
                             edificiosId = 1,
                             isActive = true,
                             numero = 202,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9090)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1780)
                         },
                         new
                         {
                             id = 5,
                             alugado = true,
                             andar = 3,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9093),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1783),
                             edificiosId = 1,
                             isActive = true,
                             numero = 301,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9095)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1784)
                         },
                         new
                         {
                             id = 6,
                             alugado = true,
                             andar = 3,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9102),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1791),
                             edificiosId = 1,
                             isActive = true,
                             numero = 302,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9104)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1793)
                         },
                         new
                         {
                             id = 7,
                             alugado = true,
                             andar = 4,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9108),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1796),
                             edificiosId = 1,
                             isActive = true,
                             numero = 401,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9109)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1797)
                         },
                         new
                         {
                             id = 8,
                             alugado = true,
                             andar = 4,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9112),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1800),
                             edificiosId = 1,
                             isActive = true,
                             numero = 402,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 349, DateTimeKind.Local).AddTicks(9114)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(1801)
                         });
                 });
 
@@ -186,22 +186,22 @@ namespace DesafioBiopark.Migrations
                         {
                             id = 1,
                             apartamentoId = 1,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 350, DateTimeKind.Local).AddTicks(3681),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(5629),
                             dtInicio = new DateTime(2023, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
                             locatarioId = 1,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 350, DateTimeKind.Local).AddTicks(4059),
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(5945),
                             valorAluguelMen = 600.0
                         },
                         new
                         {
                             id = 2,
                             apartamentoId = 5,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 350, DateTimeKind.Local).AddTicks(5397),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(7050),
                             dtInicio = new DateTime(2023, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
                             locatarioId = 5,
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 350, DateTimeKind.Local).AddTicks(5404),
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 569, DateTimeKind.Local).AddTicks(7056),
                             valorAluguelMen = 600.0
                         });
                 });
@@ -237,10 +237,10 @@ namespace DesafioBiopark.Migrations
                         new
                         {
                             id = 1,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 323, DateTimeKind.Local).AddTicks(7106),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 545, DateTimeKind.Local).AddTicks(6857),
                             locadora = "Biopark",
                             nome = "Edificio primavera",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 347, DateTimeKind.Local).AddTicks(176)
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 566, DateTimeKind.Local).AddTicks(8471)
                         });
                 });
 
@@ -259,11 +259,7 @@ namespace DesafioBiopark.Migrations
                     b.Property<bool>("isActive")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("primeiroNome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("segundoNome")
+                    b.Property<string>("nome")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -278,112 +274,101 @@ namespace DesafioBiopark.Migrations
                         new
                         {
                             id = 1,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(8247),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(2756),
                             dataNasc = new DateTime(1944, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Alexandre Levi",
-                            segundoNome = "Renato Baptista",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(8796)
+                            nome = "Alexandre Levi Renato Baptista",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3072)
                         },
                         new
                         {
                             id = 2,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9535),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3644),
                             dataNasc = new DateTime(1944, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Alexandre Levi",
-                            segundoNome = "Renato Baptista",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9542)
+                            nome = "Alexandre Levi Renato Baptista",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3650)
                         },
                         new
                         {
                             id = 3,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9546),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3653),
                             dataNasc = new DateTime(2002, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Liz",
-                            segundoNome = "Sônia Bernardes",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9547)
+                            nome = "Liz Sônia Bernardes",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3655)
                         },
                         new
                         {
                             id = 4,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9551),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3657),
                             dataNasc = new DateTime(1952, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Lucas",
-                            segundoNome = "Pietro Noah Moura",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9553)
+                            nome = "Lucas Pietro Noah Moura",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3659)
                         },
                         new
                         {
                             id = 5,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9556),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3661),
                             dataNasc = new DateTime(1962, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Elaine",
-                            segundoNome = "Natália Renata Souza",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9558)
+                            nome = "Elaine Natália Renata Souza",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3662)
                         },
                         new
                         {
                             id = 6,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9565),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3674),
                             dataNasc = new DateTime(1945, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Elisa",
-                            segundoNome = "Bianca Porto",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9567)
+                            nome = "Elisa Bianca Porto",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3675)
                         },
                         new
                         {
                             id = 7,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9571),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3678),
                             dataNasc = new DateTime(1978, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Francisca",
-                            segundoNome = "Isabelly Débora Rocha",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9572)
+                            nome = "Francisca Isabelly Débora Rocha",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3679)
                         },
                         new
                         {
                             id = 8,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9575),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3681),
                             dataNasc = new DateTime(1989, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Alexandre",
-                            segundoNome = "Bryan Nogueira",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9577)
+                            nome = "Alexandre Bryan Nogueira",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3683)
                         },
                         new
                         {
                             id = 9,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9580),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3685),
                             dataNasc = new DateTime(1982, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Nicole",
-                            segundoNome = "Analu Sarah Brito",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9582)
+                            nome = "Nicole Analu Sarah Brito",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3686)
                         },
                         new
                         {
                             id = 10,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9586),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3689),
                             dataNasc = new DateTime(1954, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Daiane",
-                            segundoNome = "Sabrina da Rosa",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9588)
+                            nome = "Daiane Sabrina da Rosa",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3691)
                         },
                         new
                         {
                             id = 11,
-                            createdAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9591),
+                            createdAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3693),
                             dataNasc = new DateTime(1978, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isActive = true,
-                            primeiroNome = "Benício",
-                            segundoNome = "Manuel Lima",
-                            updatedAt = new DateTime(2023, 3, 2, 22, 28, 59, 348, DateTimeKind.Local).AddTicks(9592)
+                            nome = "Benício Manuel Lima",
+                            updatedAt = new DateTime(2023, 3, 3, 23, 58, 21, 568, DateTimeKind.Local).AddTicks(3695)
                         });
                 });
 

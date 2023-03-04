@@ -15,12 +15,8 @@ import {
     Typography,
     TablePagination,
 } from "@mui/material";
-import {
-    ITodosEdificios,
-    TodosEdificios,
-    EdificiosCabecalho,
-    ExcluirEdificio
-} from "../../Config/edificios";
+
+import { ITodosLocatarios, TodosLocatarios, LocatariosCabecalho, ExcluirLocatario } from "../../Config/locatarios"
 import { Delete, Edit } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 // import axios from 'axios';
@@ -28,7 +24,7 @@ import React, { useEffect, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import moment from "moment";
 import { TrashIcon } from "../Icons";
-import EdificiosEditModal from "./EdificiosEditModal";
+import LocatarioEditModal from "./LocatarioEditModal";
 
 const darkTheme = createTheme({
     typography: {
@@ -41,12 +37,12 @@ const darkTheme = createTheme({
 });
 
 interface props {
-    values: Array<ITodosEdificios>;
+    values: Array<ITodosLocatarios>;
     quantityValues: number;
-    setTodosEdificios: React.Dispatch<React.SetStateAction<Array<ITodosEdificios>>>
+    setTodosEdificios: React.Dispatch<React.SetStateAction<Array<ITodosLocatarios>>>
 }
 
-export default function EdificiosTable(props: props) {
+export default function LocatariosTable(props: props) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -61,12 +57,12 @@ export default function EdificiosTable(props: props) {
         setPage(0);
     };
 
-    function DeletarEdificio(id: number) {
-        ExcluirEdificio(id).then(() => reload()).catch((error) => console.log(error));
+    function DeletarLocatario(id: number) {
+        ExcluirLocatario(id).then(() => reload()).catch((error) => console.log(error));
     }
 
     const reload = async () => {
-        await TodosEdificios.then((json) => window.location.reload()).catch((error) =>
+        await TodosLocatarios.then((json) => window.location.reload()).catch((error) =>
             console.log(error)
         );
         console.log("eoeo")
@@ -79,7 +75,7 @@ export default function EdificiosTable(props: props) {
                 <TableContainer>
                     <Table>
                         <TableRow>
-                            {EdificiosCabecalho.map((value) => (
+                            {LocatariosCabecalho.map((value) => (
                                 <TableCell>{value}</TableCell>
                             ))}
                         </TableRow>
@@ -95,7 +91,7 @@ export default function EdificiosTable(props: props) {
                                             {value.nome}
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            {value.locadora}
+                                            {moment(value.dataNasc).format("DD/MM/YYYY")}
                                         </TableCell>
                                         <TableCell component="th" scope="row">
                                             {moment(value.createdAt).format("DD/MM/YYYY")}
@@ -108,8 +104,8 @@ export default function EdificiosTable(props: props) {
                                         </TableCell>
                                         <TableCell component="th" scope="row">
                                             <div className="flex flex-row items-center whitespace-nowrap text-right text-sm font-medium">
-                                                <EdificiosEditModal id={value.id} locadora={value.locadora} nome={value.nome} />
-                                                <a className="mx-1" href="#" onClick={() => DeletarEdificio(value.id)}>
+                                                <LocatarioEditModal id={value.id} dataNasc={value.dataNasc} nome={value.nome} />
+                                                <a className="mx-1" href="#" onClick={() => DeletarLocatario(value.id)}>
                                                     {TrashIcon}
                                                 </a>
                                             </div>
