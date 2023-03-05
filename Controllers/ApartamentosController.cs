@@ -81,6 +81,38 @@ public class ApartamentosController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    
+    [HttpPost("/apartamentos/{id}/alugar")]
+    public async Task<IActionResult> AlugarApartamento(int id)
+    {
+        try
+        {
+            MySqlConnection conn = DapperConn.Conn();
+            string query = ApartamentosQuery.AlugarLiberarApartamento(true, id);
+            var edificios = conn.Query(query);
+            return Ok(edificios);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+    [HttpPost("/apartamentos/{id}/liberar")]
+    public async Task<IActionResult> LiberarApartamento(int id)
+    {
+        try
+        {
+            MySqlConnection conn = DapperConn.Conn();
+            string query = ApartamentosQuery.AlugarLiberarApartamento(false, id);
+            var edificios = conn.Query(query);
+            return Ok(edificios);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, e.Message);
+        }
+    }
 
     [HttpPost("/apartamentos/{id}/ativar")]
     public async Task<IActionResult> AtivarApartamento(int id)
@@ -88,7 +120,7 @@ public class ApartamentosController : ControllerBase
         try
         {
             MySqlConnection conn = DapperConn.Conn();
-            string query = EdificiosQuery.AtivarDesativarEdificio(true, id);
+            string query = ApartamentosQuery.AtivarDesativarApartamento(true, id);
             var edificios = conn.Query(query);
             return Ok(edificios);
         }
@@ -104,7 +136,7 @@ public class ApartamentosController : ControllerBase
         try
         {
             MySqlConnection conn = DapperConn.Conn();
-            string query = EdificiosQuery.AtivarDesativarEdificio(false, id);
+            string query = ApartamentosQuery.AtivarDesativarApartamento(false, id);
             var edificios = conn.Query(query);
             return Ok(edificios);
         }

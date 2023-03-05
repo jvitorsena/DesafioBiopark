@@ -33,7 +33,7 @@ public partial class BioparkContext : DbContext
         modelBuilder.Entity<EdificiosMigration>().HasData(EdificiosSeed.Edificios);
         modelBuilder.Entity<LocatariosMigration>().HasData(LocatariosSeed.Locatarios);
         modelBuilder.Entity<ApartamentosMigration>().HasData(ApartamentosSeed.Apartamentos);
-        modelBuilder.Entity<ContratoMigration>().HasData(ContratoSeed.Contratos);
+        // modelBuilder.Entity<ContratoMigration>().HasData(ContratoSeed.Contratos);
         
         OnModelCreatingPartial(modelBuilder);
     }

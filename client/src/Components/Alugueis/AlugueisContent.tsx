@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { TodosLocatarios, ITodosLocatarios } from "../../Config/locatarios";
-import { ITodosEdificios, TodosEdificios } from "../../Config/edificios";
+import { ITodosApartamentos, TodosApartamentos } from "../../Config/apartamentos";
 import {
     InputLabel,
     MenuItem,
@@ -13,23 +12,24 @@ import {
     Button,
 } from "@mui/material";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import LocatariosTable from "./LocatariosTable";
-import LocatarioNovoModal from "./LocatarioNovoModal";
+import AlugueisTable from "./AlugueisTable";
+import AluguelNovoModal from "./AlugueisNovoModal";
+import { ITodosAlugueis, TodosAlugueis } from "../../Config/alugueis";
 
-export default function LocatariosConent() {
+export default function AlugueisContent() {
     const [selectDocuments, setSelectDocuments] = useState("0");
-    const [todosLocatarios, setTodosLocatarios] = useState<Array<ITodosLocatarios>>(
+    const [todosAlugueis, setTodosAlugueis] = useState<Array<ITodosAlugueis>>(
         []
     );
 
     useEffect(() => {
-        TodosLocatarios.then((json) => setTodosLocatarios(json)).catch((error) =>
+        TodosAlugueis.then((json) => setTodosAlugueis(json)).catch((error) =>
             console.log(error)
         );
     }, []);
 
     function teste() {
-        TodosLocatarios.then((json) => setTodosLocatarios(json)).catch((error) =>
+        TodosAlugueis.then((json) => setTodosAlugueis(json)).catch((error) =>
             console.log(error)
         );
     }
@@ -46,7 +46,7 @@ export default function LocatariosConent() {
                         <div className="grid gap-3 grid-cols-4 sm:flex flex-wrap justify-between items-center">
                             <div className="col-span-4 flex justify-between">
                                 <div className="flex items-center space-x-3">
-                                    < LocatarioNovoModal />
+                                    < AluguelNovoModal />
                                 </div>
                             </div>
                             <div className="col-span-4 sm:flex space-y-3 sm:space-y-0 sm:space-x-3">
@@ -60,10 +60,9 @@ export default function LocatariosConent() {
                             <div className="rounded-xl mt-7 focus:outline-none">
                                 <div className="flex flex-col -mx-4 sm:mx-0">
                                     <div className="overflow-visible dark:border-slate-700 rounded-xl">
-                                        <LocatariosTable
-                                            values={todosLocatarios}
-                                            quantityValues={todosLocatarios.length}
-                                            setTodosEdificios={setTodosLocatarios}
+                                        <AlugueisTable
+                                            values={todosAlugueis}
+                                            quantityValues={todosAlugueis.length}
                                         />
                                     </div>
                                 </div>

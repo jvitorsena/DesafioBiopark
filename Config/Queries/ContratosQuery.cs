@@ -8,8 +8,9 @@ public class ContratosQuery
         {
                 return $@"SELECT
 	                        T0.id,
-	                        T0.dtInicio,
 	                        T0.valorAluguelMen,
+	                        T0.locatarioId,
+	                        T0.apartamentoId,
 	                        CONCAT(T1.nome) AS ""locatario"",
                                         T2.numero AS ""apartamento"",
                                         T0.createdAt,
@@ -26,7 +27,6 @@ public class ContratosQuery
         {
             return $@"SELECT
 	                        T0.id,
-	                        T0.dtInicio,
 	                        T0.valorAluguelMen,
 	                        CONCAT(T1.nome) AS ""locatario"",
                                         T2.numero AS ""apartamento"",
@@ -45,12 +45,11 @@ public class ContratosQuery
         public static string NovoContrato(ContratoMigration model)
         {
 	        return $@"INSERT INTO Biopark.Contratos
-					(dtInicio, valorAluguelMen, createdAt, updatedAt, isActive, locatarioId, apartamentoId)
-					VALUES('{DateTime.Parse(model.dtInicio.ToString()).ToString("YYYY-MM-dd")}',
-					       {model.valorAluguelMen},
+					(valorAluguelMen, createdAt, updatedAt, isActive, locatarioId, apartamentoId)
+					VALUES({model.valorAluguelMen},
 					       '{DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss")}',
 							'{DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss")}',
-					       {model.isActive},
+					       {true},
 					       {model.locatarioId},
 					       {model.apartamentoId});
 					";
@@ -58,20 +57,16 @@ public class ContratosQuery
 
         public static string EditarContrato(ContratoMigration model, int id)
         {
-	        string dtInicio = string.IsNullOrEmpty(model.dtInicio.ToString()) ? "" : $"dtInicio='{DateTime.Parse(model.dtInicio.ToString()).ToString("yyyy-MM-dd")}'";
 	        string valorAluguelMen = string.IsNullOrEmpty(model.valorAluguelMen.ToString()) ? "" : $"valorAluguelMen={model.valorAluguelMen}";
 	        string updatedAt = $"updatedAt='{DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss")}'";
-	        string isActive = $"isActive={model.isActive}";
 	        string locatarioId = string.IsNullOrEmpty(model.locatarioId.ToString()) ? "" : $"locatarioId={model.locatarioId}";
 	        string apartamentoId = string.IsNullOrEmpty(model.apartamentoId.ToString()) ? "" : $"apartamentoId={model.apartamentoId}";
 	        
 	        return $@"UPDATE Biopark.Contratos
-						SET {dtInicio},
-						    {valorAluguelMen},
+						SET {valorAluguelMen},
 						    {updatedAt}, 
 						    {locatarioId},
-						    {apartamentoId},
-						    {isActive}
+						    {apartamentoId}
 						WHERE id={id};";
         }
 

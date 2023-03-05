@@ -4,6 +4,8 @@ import Asidebar from "./Components/Asidebar";
 import Head from "./Components/Head";
 import EdificiosContent from "./Components/Edificios/EdificiosContent";
 import LocatariosConent from "./Components/Locatarios/LocatariosContent";
+import ApartamentosContent from "./Components/Apartamentos/ApartamentosContent";
+import AlugueisContent from "./Components/Alugueis/AlugueisContent";
 
 const darkTheme = createTheme({
   palette: {
@@ -26,6 +28,8 @@ export default function App() {
                   <Head titulo={route} />
                   {route == 'edificios' ? <EdificiosContent /> : null}
                   {route == 'locatarios' ? <LocatariosConent /> : null}
+                  {route == 'apartamentos' ? <ApartamentosContent /> : null}
+                  {route == 'alugueis' ? <AlugueisContent /> : null}
                 </div>
               </div>
             </main>

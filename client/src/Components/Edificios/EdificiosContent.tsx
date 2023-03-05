@@ -84,7 +84,6 @@ export default function EdificiosContent() {
                                             quantityValues={todosEdificios.length}
                                             setTodosEdificios={setTodosEdificios}
                                         />
-                                        <h1>Hello World</h1>
                                     </div>
                                 </div>
                             </div>

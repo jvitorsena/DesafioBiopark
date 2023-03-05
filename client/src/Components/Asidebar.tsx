@@ -100,9 +100,9 @@ export default function Asidebar(props: props) {
             <div className="space-y-3">
               <a
                 className="group flex items-center px-4 py-2 dark:hover:bg-[#262833] relative text-midnight-primary font-semibold cursor-pointer"
-                onClick={() => props.setRoute("contratos")}
+                onClick={() => props.setRoute("alugueis")}
               >
-                {props.route == "contratos" ? (
+                {props.route == "alugueis" ? (
                   <div className="hidden md:inline-block h-5 w-0.5 bg-midnight-primary absolute right-0 dark:bg-white" />
                 ) : null}
                 <div className="flex justify-center items-center mr-2">
@@ -122,7 +122,7 @@ export default function Asidebar(props: props) {
                     ></path>
                   </svg>
                 </div>
-                <span className="truncate">Contratos</span>
+                <span className="truncate">Aluguéis</span>
               </a>
             </div>
           </nav>

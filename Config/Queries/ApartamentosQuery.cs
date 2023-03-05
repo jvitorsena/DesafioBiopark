@@ -14,7 +14,8 @@ public class ApartamentosQuery
 					T0.createdAt,
 					T0.updatedAt,
 					T0.isActive,
-					T1.nome AS ""edificio""
+					T1.nome AS ""edificio"",
+					T0.edificiosId
 					    FROM
 						    Apartamentos T0
 						    INNER JOIN Edificios T1
@@ -33,12 +34,12 @@ public class ApartamentosQuery
 					T0.updatedAt,
 					T0.isActive,
 					T1.nome AS ""edificio""
-					    FROM
-						    Apartamentos T0
-						    INNER JOIN Edificios T1
-						    WHERE
-					    T0.edificiosId = T1.id
-						WHERE T0.id = {id}";
+				        FROM
+					        Apartamentos T0
+					        INNER JOIN Edificios T1 ON
+				        T0.edificiosId = T1.id
+				        WHERE
+				        T0.id = {id}";
     }
 
     public static string NovoApartamento(ApartamentosMigration model)
@@ -59,13 +60,12 @@ public class ApartamentosQuery
     {
 	    string numero = string.IsNullOrEmpty(model.numero.ToString()) ? "" : $"numero={model.numero}";
 	    string andar = string.IsNullOrEmpty(model.andar.ToString()) ? "" : $@"andar={model.andar}";
-	    string alugado = $"isActive={model.alugado}";
 	    string updatedAt = $"updatedAt='{DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss")}'";
 	    string edificioId = string.IsNullOrEmpty(model.edificiosId.ToString()) ? "" : $"edificiosId={model.edificiosId}";
 	    
 	    return $@"UPDATE Biopark.Apartamentos
 					SET
-					{numero}, {andar}, {alugado}, {updatedAt}, {edificioId}
+					{numero}, {andar}, {updatedAt}, {edificioId}
 					WHERE id={id};";
 
     }
@@ -73,5 +73,10 @@ public class ApartamentosQuery
     public static string AtivarDesativarApartamento(bool isActive, int id)
     {
 	    return $@"UPDATE Biopark.Apartamentos SET isActive={isActive} WHERE Id={id}";
+    }
+    
+    public static string AlugarLiberarApartamento(bool alugado, int id)
+    {
+	    return $@"UPDATE Biopark.Apartamentos SET alugado={alugado} WHERE Id={id}";
     }
 }
