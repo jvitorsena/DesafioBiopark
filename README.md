@@ -30,7 +30,9 @@ Após a execução da WebApi navegar até a pasta client na raiz do projeto e ro
 - npm i
 - npm start
 
+## Observação
 
+Foi feito o deploy do backend na AWS, caso preferir, executar somente o frontend ao clonar o projeto, a configuração da url da webapi esta direcionada para a aws como padrão.
 
 
 

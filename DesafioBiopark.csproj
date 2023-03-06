@@ -26,14 +26,17 @@
 
     <ItemGroup>
       <EmbeddedResource Remove="Config\Queries\Locatarios\**" />
+      <EmbeddedResource Remove="Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Config\Queries\Locatarios\**" />
+      <None Remove="Migrations\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Content Remove="Config\Queries\Locatarios\**" />
+      <Content Remove="Migrations\**" />
     </ItemGroup>
 
 </Project>
