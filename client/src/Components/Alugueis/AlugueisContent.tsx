@@ -61,8 +61,8 @@ export default function AlugueisContent() {
                                 <div className="flex flex-col -mx-4 sm:mx-0">
                                     <div className="overflow-visible dark:border-slate-700 rounded-xl">
                                         <AlugueisTable
-                                            values={todosAlugueis}
-                                            quantityValues={todosAlugueis.length}
+                                            values={todosAlugueis.filter((aluguel) => aluguel.isActive === true)}
+                                            quantityValues={todosAlugueis.filter((aluguel) => aluguel.isActive === true).length}
                                         />
                                     </div>
                                 </div>

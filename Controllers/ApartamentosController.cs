@@ -136,6 +136,9 @@ public class ApartamentosController : ControllerBase
         try
         {
             MySqlConnection conn = DapperConn.Conn();
+            var validacao = conn.Query($"SELECT * FROM Apartamentos WHERE id={id} AND alugado={true} AND isActive={true}");
+            if (validacao.Count() > 0)
+                return StatusCode(500, "Apartamento esta alugado, favor verificar !");
             string query = ApartamentosQuery.AtivarDesativarApartamento(false, id);
             var edificios = conn.Query(query);
             return Ok(edificios);

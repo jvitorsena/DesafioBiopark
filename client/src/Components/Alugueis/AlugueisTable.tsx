@@ -45,6 +45,8 @@ export default function AlugueisTable(props: props) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+    console.log(props.quantityValues)
+
     const handleChangePage = (event: unknown, newPage: number) => {
         setPage(newPage);
     };
@@ -56,8 +58,8 @@ export default function AlugueisTable(props: props) {
         setPage(0);
     };
 
-    function DelApartamento(id: number) {
-        ExcluirAluguel(id).then(() => reload()).catch((error) => console.log(error));
+    function DelApartamento(id: number, apartamentoId: number) {
+        ExcluirAluguel(id, apartamentoId).then(() => reload()).catch((error) => console.log(error));
     }
 
     const reload = async () => {
@@ -82,7 +84,6 @@ export default function AlugueisTable(props: props) {
                         <TableBody>
                             {props.values
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                .filter((apartamentos) => apartamentos.isActive === true)
                                 .map((value) => (
                                     <TableRow>
                                         <TableCell component="th" scope="row">
@@ -114,7 +115,7 @@ export default function AlugueisTable(props: props) {
                                                     apartamentoId={value.apartamentoId}
                                                     locatarioId={value.locatarioId}
                                                 />
-                                                <a className="mx-1" href="#" onClick={() => DelApartamento(value.id)}>
+                                                <a className="mx-1" href="#" onClick={() => DelApartamento(value.id, value.apartamentoId)}>
                                                     {TrashIcon}
                                                 </a>
                                             </div>

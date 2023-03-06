@@ -29,6 +29,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import moment from "moment";
 import { TrashIcon } from "../Icons";
 import EdificiosEditModal from "./EdificiosEditModal";
+import ErrorModal from "../ErrorModal";
 
 const darkTheme = createTheme({
     typography: {
@@ -47,8 +48,10 @@ interface props {
 }
 
 export default function EdificiosTable(props: props) {
+    const [open, setOpen] = React.useState(false);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [errMsg, setErrMsg] = React.useState('');
 
     const handleChangePage = (event: unknown, newPage: number) => {
         setPage(newPage);
@@ -62,7 +65,7 @@ export default function EdificiosTable(props: props) {
     };
 
     function DeletarEdificio(id: number) {
-        ExcluirEdificio(id).then(() => reload()).catch((error) => console.log(error));
+        ExcluirEdificio(id).then(() => reload()).catch((error) => { setOpen(true), setErrMsg(error.response.data) });
     }
 
     const reload = async () => {
@@ -75,6 +78,7 @@ export default function EdificiosTable(props: props) {
     return (
         <>
             <ThemeProvider theme={darkTheme}>
+                <ErrorModal setOpen={setOpen} open={open} errMsg={errMsg} />
                 {/* <a className='cursor-pointer' onClick={() => teste2()}>saodjaoid</a> */}
                 <TableContainer>
                     <Table>

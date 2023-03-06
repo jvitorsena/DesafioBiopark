@@ -104,6 +104,9 @@ public class LocatariosController : ControllerBase
         try
         {
             MySqlConnection conn = DapperConn.Conn();
+            var validacao = conn.Query($"SELECT * FROM Contratos WHERE locatarioId = {id} AND isActive={true}");
+            if (validacao.Count() > 0)
+                return StatusCode(500, "Cadastro com contrato de aluguel ativo!");
             string query = LocatariosQuery.AtivarDesativarLocatario(false, id);
             var edificios = conn.Query(query);
             return Ok(edificios);

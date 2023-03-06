@@ -15,6 +15,7 @@ import {
     Typography,
     TablePagination,
 } from "@mui/material";
+import ErrorModal from "../ErrorModal";
 
 import { ITodosLocatarios, TodosLocatarios, LocatariosCabecalho, ExcluirLocatario } from "../../Config/locatarios"
 import { Delete, Edit } from "@mui/icons-material";
@@ -43,6 +44,8 @@ interface props {
 }
 
 export default function LocatariosTable(props: props) {
+    const [open, setOpen] = React.useState(false);
+    const [errMsg, setErrMsg] = React.useState('');
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -58,7 +61,7 @@ export default function LocatariosTable(props: props) {
     };
 
     function DeletarLocatario(id: number) {
-        ExcluirLocatario(id).then(() => reload()).catch((error) => console.log(error));
+        ExcluirLocatario(id).then(() => reload()).catch((error) => { setOpen(true), setErrMsg(error.response.data) });
     }
 
     const reload = async () => {
@@ -71,6 +74,7 @@ export default function LocatariosTable(props: props) {
     return (
         <>
             <ThemeProvider theme={darkTheme}>
+                <ErrorModal open={open} setOpen={setOpen} errMsg={errMsg} />
                 {/* <a className='cursor-pointer' onClick={() => teste2()}>saodjaoid</a> */}
                 <TableContainer>
                     <Table>

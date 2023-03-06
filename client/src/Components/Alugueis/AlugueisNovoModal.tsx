@@ -98,7 +98,7 @@ export default function AluguelNovoModal() {
             >
                 <Box sx={{ ...style, width: 400 }}>
                     <div>
-                        <TextField id="standard-basic" label="Valor aluguel" variant="standard" onChange={(e) => setValorAluguelMen(Number(e.target.value))} />
+                        <TextField type='number' id="standard-basic" label="Valor aluguel" variant="standard" onChange={(e) => setValorAluguelMen(Number(e.target.value))} />
                     </div>
                     <div className='mt-5'>
                         <TextField
@@ -110,11 +110,13 @@ export default function AluguelNovoModal() {
                             onChange={(e) => setLocatarioId(Number(e.target.value))}
                             value={locatarioId}
                         >
-                            {locatarios.map((value) => (
-                                <MenuItem key={value.id} value={value.id}>
-                                    {value.nome}
-                                </MenuItem>
-                            ))}
+                            {locatarios
+                                .filter((value) => value.isActive === true)
+                                .map((value) => (
+                                    <MenuItem key={value.id} value={value.id}>
+                                        {value.nome}
+                                    </MenuItem>
+                                ))}
                         </TextField>
                     </div>
                     <div className='mt-5'>
@@ -127,11 +129,13 @@ export default function AluguelNovoModal() {
                             onChange={(e) => setApartamentoId(Number(e.target.value))}
                             value={apartamentoId}
                         >
-                            {apartamentos.map((value) => (
-                                <MenuItem key={value.id} value={value.id}>
-                                    {value.numero}
-                                </MenuItem>
-                            ))}
+                            {apartamentos
+                                .filter((value) => value.isActive === true && value.alugado === false)
+                                .map((value) => (
+                                    <MenuItem key={value.id} value={value.id}>
+                                        {value.numero}
+                                    </MenuItem>
+                                ))}
                         </TextField>
                     </div>
                     <div className='mt-5'>

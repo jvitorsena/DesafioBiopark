@@ -60,8 +60,8 @@ export default function ApartamentosContent() {
                                 <div className="flex flex-col -mx-4 sm:mx-0">
                                     <div className="overflow-visible dark:border-slate-700 rounded-xl">
                                         <ApartamentosTable
-                                            values={todosApartamentos}
-                                            quantityValues={todosApartamentos.length}
+                                            values={todosApartamentos.filter((value) => value.isActive === true)}
+                                            quantityValues={todosApartamentos.filter((value) => value.isActive === true).length}
                                             setTodosApartamentos={setTodosApartamentos}
                                         />
                                     </div>

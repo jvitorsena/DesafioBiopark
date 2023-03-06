@@ -46,26 +46,6 @@ export default function EdificiosContent() {
                             <div className="col-span-4 flex justify-between">
                                 <div className="flex items-center space-x-3">
                                     < EdificiosNovoModal />
-                                    {/* <div className="font-semibold text-xl dark:text-white">
-                    Pagina inicial
-                  </div>
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">
-                      Document
-                    </InputLabel>
-                    <Select
-                      labelId="Document"
-                      id="Document"
-                      defaultValue="Document"
-                      value={selectDocuments}
-                      label="Document"
-                      onChange={(a) => handleChange(a, "documents")}
-                    >
-                      <MenuItem value={"0"}>Select</MenuItem>
-                      <MenuItem value={"2022"}>2022</MenuItem>
-                      <MenuItem value={"2023"}>2023</MenuItem>
-                    </Select>
-                  </FormControl> */}
                                 </div>
                             </div>
                             <div className="col-span-4 sm:flex space-y-3 sm:space-y-0 sm:space-x-3">
@@ -80,8 +60,8 @@ export default function EdificiosContent() {
                                 <div className="flex flex-col -mx-4 sm:mx-0">
                                     <div className="overflow-visible dark:border-slate-700 rounded-xl">
                                         <EdificiosTable
-                                            values={todosEdificios}
-                                            quantityValues={todosEdificios.length}
+                                            values={todosEdificios.filter((value) => value.isActive === true)}
+                                            quantityValues={todosEdificios.filter((value) => value.isActive === true).length}
                                             setTodosEdificios={setTodosEdificios}
                                         />
                                     </div>

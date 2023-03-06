@@ -92,8 +92,8 @@ export default function ApartamentosNovoModal() {
             >
                 <Box sx={{ ...style, width: 400 }}>
                     <div>
-                        <TextField id="standard-basic" label="Numero" variant="standard" onChange={(e) => setNumero(Number(e.target.value))} />
-                        <TextField id="standard-basic" label="Andar" variant="standard" onChange={(e) => setAndar(Number(e.target.value))} />
+                        <TextField type='number' id="standard-basic" label="Numero" variant="standard" onChange={(e) => setNumero(Number(e.target.value))} />
+                        <TextField type='number' id="standard-basic" label="Andar" variant="standard" onChange={(e) => setAndar(Number(e.target.value))} />
                     </div>
                     <div className='mt-5'>
                         <TextField
@@ -104,7 +104,7 @@ export default function ApartamentosNovoModal() {
                             helperText="Selecione o edificio"
                             onChange={(e) => setEdificioId(Number(e.target.value))}
                         >
-                            {edificios.map((value) => (
+                            {edificios.filter((value) => value.isActive === true).map((value) => (
                                 <MenuItem key={value.id} value={value.id}>
                                     {value.nome}
                                 </MenuItem>

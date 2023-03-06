@@ -105,6 +105,11 @@ public class EdificiosController : ControllerBase
         try
         {
             MySqlConnection conn = DapperConn.Conn();
+
+            var validacao = conn.Query($"SELECT * FROM Apartamentos WHERE edificiosId = {id} AND isActive={true}");
+            if (validacao.Count() > 0)
+                return StatusCode(500, "Existem apartamentos cadastrados para esse edificio !");
+            
             string query = EdificiosQuery.AtivarDesativarEdificio(false, id);
             var edificios = conn.Query(query);
             return Ok(edificios);
