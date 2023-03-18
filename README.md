@@ -14,6 +14,8 @@
 
 `docker-compose up --build`
 
+Abrir frontend no browser `http://localhost:3000/`
+
 ------
 
 ## Diagrama banco de dados

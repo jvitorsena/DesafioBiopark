@@ -46,6 +46,17 @@ services:
     networks:
       biopark:
         ipv4_address: 192.168.150.4
+  frontend:
+    image: node:18
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client:/srv/frontend
+    working_dir: /srv/frontend
+    command: 'npm start'
+    networks:
+      biopark:
+        ipv4_address: 192.168.150.5
 networks:
   biopark:
     driver: bridge
