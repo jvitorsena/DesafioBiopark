@@ -4,6 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
@@ -37,6 +38,11 @@
     <ItemGroup>
       <Content Remove="Config\Queries\Locatarios\**" />
       <Content Remove="Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="db" />
+      <Folder Include="db\init.sql" />
     </ItemGroup>
 
 </Project>

@@ -23,6 +23,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import moment from "moment";
 import { TrashIcon } from "../Icons";
 import AlugueisEditModal from "./AlugueisEditModal";
+import { ITodosEdificios } from "../../Config/edificios";
 
 const darkTheme = createTheme({
     typography: {

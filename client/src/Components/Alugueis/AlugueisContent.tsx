@@ -15,6 +15,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import AlugueisTable from "./AlugueisTable";
 import AluguelNovoModal from "./AlugueisNovoModal";
 import { ITodosAlugueis, TodosAlugueis } from "../../Config/alugueis";
+import { ITodosEdificios, TodosEdificios } from "../../Config/edificios";
 
 export default function AlugueisContent() {
     const [selectDocuments, setSelectDocuments] = useState("0");

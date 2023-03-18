@@ -8,6 +8,7 @@ public class EdificiosMigration
 {
     [Key, ForeignKey("edificiosId")]
     public int id { get; set; }
+    [Required(ErrorMessage = "Name is required")]
     public string nome { get; set; }
     public string locadora { get; set; }
     public DateTime? createdAt { get; set; }

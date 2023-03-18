@@ -8,6 +8,7 @@ import { TodosApartamentos, ITodosApartamentos } from '../../Config/apartamentos
 import { TodosLocatarios, ITodosLocatarios } from '../../Config/locatarios';
 import MenuItem from '@mui/material/MenuItem';
 import { useEffect } from 'react';
+import { ITodosEdificios, TodosEdificios } from '../../Config/edificios';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -62,10 +63,12 @@ export default function AluguelNovoModal() {
 
     const [locatarios, setTodosLocatarios] = React.useState<Array<ITodosLocatarios>>([]);
     const [apartamentos, setTodosApartamentos] = React.useState<Array<ITodosApartamentos>>([]);
+    const [edificios, setEdificios] = React.useState<Array<ITodosEdificios>>([]);
 
     const [apartamentoId, setApartamentoId] = React.useState<number>(0);
     const [locatarioId, setLocatarioId] = React.useState<number>(0);
     const [valorAluguelMen, setValorAluguelMen] = React.useState<number>(0);
+    const [edificioId, setEdificioId] = React.useState<number>(0);
 
     useEffect(() => {
         TodosApartamentos.then((json) => setTodosApartamentos(json)).catch((error) =>
@@ -74,6 +77,7 @@ export default function AluguelNovoModal() {
         TodosLocatarios.then((json) => setTodosLocatarios(json)).catch((error) =>
             console.log(error)
         );
+        TodosEdificios.then((json) => setEdificios(json)).catch((error) => console.log(error));
     }, []);
 
     function register() {
@@ -123,14 +127,35 @@ export default function AluguelNovoModal() {
                         <TextField
                             id="outlined-select-currency"
                             select
+                            label="Edificios"
+                            defaultValue="0"
+                            helperText="Selecione o edificio"
+                            onChange={(e) => { setEdificioId(Number(e.target.value)); setApartamentoId(0); console.log(apartamentoId) }}
+                            aria-disabled={true}
+                            value={edificioId}
+                        >
+                            {edificios
+                                .filter((value) => value.isActive === true)
+                                .map((value) => (
+                                    <MenuItem key={value.id} value={value.id}>
+                                        {value.nome}
+                                    </MenuItem>
+                                ))}
+                        </TextField>
+                    </div>
+                    <div className='mt-5'>
+                        <TextField
+                            id="outlined-select-currency"
+                            select
                             label="Apartamentos"
                             defaultValue="EUR"
                             helperText="Selecione o apartamento"
                             onChange={(e) => setApartamentoId(Number(e.target.value))}
+                            disabled={edificioId === 0 ? true : false}
                             value={apartamentoId}
                         >
                             {apartamentos
-                                .filter((value) => value.isActive === true && value.alugado === false)
+                                .filter((value) => value.isActive === true && value.alugado === false && value.edificiosId === edificioId)
                                 .map((value) => (
                                     <MenuItem key={value.id} value={value.id}>
                                         {value.numero}
@@ -142,6 +167,7 @@ export default function AluguelNovoModal() {
                         <Button onClick={() => register()}>Criar</Button>
                         {/* <ChildModal /> */}
                     </div>
+
                 </Box>
             </Modal>
         </div>

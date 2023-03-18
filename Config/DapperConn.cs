@@ -9,11 +9,19 @@ public class DapperConn
 {
     public static MySqlConnection Conn()
     {
-        string Server = System.Configuration.ConfigurationManager.AppSettings["ServerName"];
-        string Port = System.Configuration.ConfigurationManager.AppSettings["Port"];
-        string Database = System.Configuration.ConfigurationManager.AppSettings["Database"];
-        string UserId = System.Configuration.ConfigurationManager.AppSettings["UserName"];
-        string Password = System.Configuration.ConfigurationManager.AppSettings["UserPass"];
+        IConfiguration AppSettings = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true)
+            .AddEnvironmentVariables()
+            .Build();
+
+        IConfigurationSection ConnectionStrings = AppSettings.GetSection("ConnectionStrings");
+
+        string Server = ConnectionStrings["ServerName"];
+        string Port = ConnectionStrings["Port"];
+        string Database = ConnectionStrings["Database"];
+        string UserId = ConnectionStrings["UserName"];
+        string Password = ConnectionStrings["UserPass"];
         
         MySqlConnection connection = new MySqlConnection($"Server={Server};Port={Port};Database={Database};User Id={UserId};Password={Password};");
         

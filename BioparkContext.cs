@@ -22,7 +22,8 @@ public partial class BioparkContext : DbContext
     public virtual DbSet<ContratoMigration> Contratos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("server=localhost;user=root;password=root_pwd;database=Biopark", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql"));
+        // => optionsBuilder.UseMySql("server=localhost;user=root;password=root_pwd;database=Biopark", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql"));
+        => optionsBuilder.UseMySql("server=localhost;Port=3308;user=root;password=root_pwd;database=Biopark", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
